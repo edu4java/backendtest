@@ -1,7 +1,4 @@
-# Backendtest
-Test for test backend capabilities
-
-## Ejercicio
+# Ejercicio
 
 En la base de datos de comercio electrónico de la compañía disponemos de la tabla PRICES que refleja el precio final (pvp) y la tarifa que aplica a un producto de una cadena entre unas fechas determinadas. A continuación se muestra un ejemplo de la tabla con los campos relevantes:
  
@@ -51,3 +48,23 @@ Desarrollar unos test al endpoint rest que  validen las siguientes peticiones al
 - Diseño y construcción del servicio.
 - Calidad de Código.
 - Resultados correctos en los test.
+  
+# Solución: “Backendtest”
+Proyecto java spring boot “Backendtest” usando apache maven 3.8.5 y Java versión 17.0.4.1.  
+El proyecto expone el servicio un endpoint http GET con el siguiente nombre y formato de parámetros:  
+**{servidor:puerto}/pvp/{identificador de cadena}/{identificador de producto}/{fecha en formato "yyyy-MM-dd-HH.mm.ss"}**
+
+## Para ejecutar los test
+**mvn test**
+
+## Para iniciar el servicio  
+**mvn spring-boot:run**  
+  
+Ejecutado el comando anterior en un ordenador (localhost) podemos usar un cliente http (ej:Google Chrome) para probar el endpoint:  
+| Urls para los casos de prueba solicitados |
+|------|
+| http://localhost:8080/pvp/1/35455/2020-06-14-10.00.00 |
+| http://localhost:8080/pvp/1/35455/2020-06-14-16.00.00 |
+| http://localhost:8080/pvp/1/35455/2020-06-14-21.00.00 |
+| http://localhost:8080/pvp/1/35455/2020-06-15-10.00.00 |
+| http://localhost:8080/pvp/1/35455/2020-06-16-21.00.00 |
